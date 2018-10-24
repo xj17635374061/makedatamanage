@@ -95,7 +95,6 @@ public class MakeDataController {
     /**
      * 根据时间区间查询预约数据集合
      * @param beginDate 起始时间
-     * @param endDate   结束时间
      * @return
      */
     @ResponseBody
