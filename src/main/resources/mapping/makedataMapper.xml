@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ziqing.makedatamanage.dao.MakeDataMapper">
+    <insert id="saveMakeInfo" parameterType="com.ziqing.makedatamanage.pojo.makedata">
+            insert into makedata values (null,#{name},#{telnum},#{nowdate})
+    </insert>
+
+    <select id="getAllMakeDataInfoByDate" resultType="com.ziqing.makedatamanage.pojo.makedata">
+        select * from makedata where 1=1
+        <if test="beginDate!=null and beginDate!=''">
+            and unix_timestamp(#{beginDate}) &lt; unix_timestamp(nowdate)
+        </if>
+        <if test="endDate!=null and endDate!=''">
+            and unix_timestamp(#{endDate}) &gt; unix_timestamp(nowdate)
+        </if>
+    </select>
+
+    <select id="exprotExcel" resultType="com.ziqing.makedatamanage.pojo.makedata">
+        select * from makedata
+    </select>
+</mapper>
