@@ -32,8 +32,8 @@ public class MakeDataServiceImopl implements MakeDataService {
      * @return
      */
     @Override
-    public List<makedata> getMakeDataList(String beginDate,String endDate) throws Exception {
-        return makeDataMapper.getAllMakeDataInfoByDate(beginDate,endDate);
+    public List<makedata> getMakeDataList(String beginDate) throws Exception {
+        return makeDataMapper.getAllMakeDataInfoByDate(beginDate);
     }
 
     /**

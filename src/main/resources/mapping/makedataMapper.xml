@@ -9,11 +9,11 @@
     <select id="getAllMakeDataInfoByDate" resultType="com.ziqing.makedatamanage.pojo.makedata">
         select * from makedata where 1=1
         <if test="beginDate!=null and beginDate!=''">
-            and unix_timestamp(#{beginDate}) &lt; unix_timestamp(nowdate)
+            and unix_timestamp(#{beginDate}) = unix_timestamp(nowdate)
         </if>
-        <if test="endDate!=null and endDate!=''">
+    <!--    <if test="endDate!=null and endDate!=''">
             and unix_timestamp(#{endDate}) &gt; unix_timestamp(nowdate)
-        </if>
+        </if>-->
     </select>
 
     <select id="exprotExcel" resultType="com.ziqing.makedatamanage.pojo.makedata">

@@ -17,10 +17,9 @@ public interface MakeDataService {
     /**
      * 根据时间区间查询预约数据集合
      * @param beginDate 起始时间
-     * @param endDate 结束时间
      * @return
      */
-    List<makedata> getMakeDataList(String beginDate, String endDate)throws  Exception;
+    List<makedata> getMakeDataList(String beginDate)throws  Exception;
 
     /**
      * excel导出

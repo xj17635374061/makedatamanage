@@ -100,10 +100,10 @@ public class MakeDataController {
      */
     @ResponseBody
     @RequestMapping(value = "/getMakeDataList.do", method = RequestMethod.GET)
-    public ReponseResult getMakeDataList(@RequestParam("beginDate") String beginDate, @RequestParam("endDate") String endDate) {
+    public ReponseResult getMakeDataList(@RequestParam("beginDate") String beginDate) {
 
         try {
-            List<makedata> result = makeDataService.getMakeDataList(beginDate, endDate);
+            List<makedata> result = makeDataService.getMakeDataList(beginDate);
             ReponseResult<List> date;
             if (result!=null){
                 date= ReponseResult.ok(result,"根据时间区间查询预约数据集合成功");

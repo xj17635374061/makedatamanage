@@ -23,7 +23,7 @@ public interface MakeDataMapper extends CommonMapper<makedata> {
     Integer saveMakeInfo(makedata makedata) throws Exception;
 
     // 按照时间区间 查询
-    List<makedata> getAllMakeDataInfoByDate(@Param("beginDate") String beginDate, @Param("endDate") String endDate) throws Exception;
+    List<makedata> getAllMakeDataInfoByDate(@Param("beginDate") String beginDate) throws Exception;
 
     //excel导出
     List<makedata> exprotExcel() throws Exception;
